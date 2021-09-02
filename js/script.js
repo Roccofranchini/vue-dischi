@@ -21,8 +21,7 @@ const app = new Vue({
 		selectTypes() {
 			const selectTypes = [];
 			for (const song in this.songs) {
-				if (selectTypes.includes(song.genre)) {
-				} else {
+				if (!selectTypes.includes(song.genre)) {
 					selectTypes.push(song.genre);
 				}
 			}
