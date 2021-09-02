@@ -7,6 +7,27 @@ const app = new Vue({
 	data: {
 		songs: [],
 		error: false,
+		select: "",
+	},
+	computed: {
+		selectedSongs() {
+			const select = this.select;
+			const selectedSongs = this.songs.filter((song) =>
+				song.genre.includes(select)
+			);
+			return selectedSongs;
+		},
+
+		selectTypes() {
+			const selectTypes = [];
+			for (const song in this.songs) {
+				if (selectTypes.includes(song.genre)) {
+				} else {
+					selectTypes.push(song.genre);
+				}
+			}
+			return selectTypes;
+		},
 	},
 	methods: {},
 	created() {

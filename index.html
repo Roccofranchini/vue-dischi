@@ -18,7 +18,7 @@
 			</header>
 			<main class="container">
 				<section id="album-container">
-					<div v-for="(song, index) in songs" class="card">
+					<div v-for="(song, index) in selectedSongs" class="card">
 						<img :src="`${song.poster}`" alt="New Jersey" />
 						<h2 class="title">{{song.title}}</h2>
 						<address class="author">{{song.author}}</address>
@@ -26,13 +26,12 @@
 					</div>
 				</section>
 			</main>
+			<select v-model="select" name="" id="">
+				<option v-for="(selectType, index) in selectTypes">
+					{{selectType}}
+				</option>
+			</select>
 		</div>
-
-		<select name="" id="">
-			<option>All</option>
-			<option>Pop</option>
-			<option>Pop</option>
-		</select>
 
 		<script src="js/script.js"></script>
 	</body>
