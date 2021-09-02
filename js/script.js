@@ -12,19 +12,23 @@ const app = new Vue({
 	computed: {
 		selectedSongs() {
 			const select = this.select;
-			const selectedSongs = this.songs.filter((song) =>
-				song.genre.includes(select)
-			);
-			return selectedSongs;
+			if (select !== "All") {
+				const selectedSongs = this.songs.filter((song) =>
+					song.genre.includes(select)
+				);
+				return selectedSongs;
+			}
 		},
 
 		selectTypes() {
 			const selectTypes = [];
-			for (const song in this.songs) {
-				if (!selectTypes.includes(song.genre)) {
-					selectTypes.push(song.genre);
+			for (var i = 0; i < this.songs.length; i++) {
+				console.log(this.songs[i].genre);
+				if (!selectTypes.includes(this.songs[i].genre)) {
+					selectTypes.push(this.songs[i].genre);
 				}
 			}
+			console.log(selectTypes);
 			return selectTypes;
 		},
 	},

@@ -17,6 +17,14 @@
 				</div>
 			</header>
 			<main class="container">
+				<div class="row">
+					<select v-model="select" name="" id="">
+						<option value="" selected>All</option>
+						<option v-for="(selectType, index) in selectTypes">
+							{{selectType}}
+						</option>
+					</select>
+				</div>
 				<section id="album-container">
 					<div v-for="(song, index) in selectedSongs" class="card">
 						<img :src="`${song.poster}`" alt="New Jersey" />
@@ -26,11 +34,6 @@
 					</div>
 				</section>
 			</main>
-			<select v-model="select" name="" id="">
-				<option v-for="(selectType, index) in selectTypes">
-					{{selectType}}
-				</option>
-			</select>
 		</div>
 
 		<script src="js/script.js"></script>
