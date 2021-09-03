@@ -16,9 +16,7 @@ const app = new Vue({
 				const selectedSongs = this.songs.filter((song) =>
 					song.genre.includes(select)
 				);
-				return selectedSongs.sort((a, b) => {
-					return b.year - a.year;
-				});
+				return selectedSongs.sort((a, b) => b.year - a.year);
 			}
 		},
 
